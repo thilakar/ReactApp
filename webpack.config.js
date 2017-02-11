@@ -1,22 +1,21 @@
-var config = {
-   entry: './main.js',
-	
+var path = require("path");
+var webpack = require("webpack");
+
+module.exports = {
+   entry: [
+      './main.js'
+   ],	
    output: {
-      path:'./',
-      filename: 'index.js',
+      path: __dirname,
+      filename: 'bundle.js'
    },
-	
-   devServer: {
-      inline: true,
-      port: 8080
-   },
-	
+	devServer: { inline: true },
    module: {
       loaders: [
          {
             test: /\.jsx?$/,
             exclude: /node_modules/,
-            loader: 'babel',
+            loader: ['babel'],
 				
             query: {
                presets: ['es2015', 'react']
@@ -25,5 +24,3 @@ var config = {
       ]
    }
 }
-
-module.exports = config;

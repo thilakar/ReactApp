@@ -28,7 +28,7 @@ $RECYCLE.BIN/
 .AppleDouble
 .LSOverride
 
-# Thumbnails
+# Thumbnailss
 ._*
 
 # Files that might appear in the root of a volume
@@ -45,3 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+node_modules/
+
