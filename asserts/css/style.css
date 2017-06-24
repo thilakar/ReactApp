@@ -1,0 +1,55 @@
+body {
+	font-size:12px;
+	font-family: Arial helvetica;
+	text-align: left;
+}
+ul, p, ol, p, h1, h2, h3 {
+	margin:0px;
+	padding:0px;
+}
+li {
+	list-style-type:none;
+}
+.Header .logoContainer {
+	width:100%;
+	background:#333;
+	color:#fff;
+  padding-left: 0!important;
+  padding-right: 0!important;
+  position: fixed;
+  top:20px;
+  left:0;
+}
+.Header .logoContainer li a{
+	color:#fff;
+	font-size:14px;
+}
+
+.Header .logoContainer li a:hover, .Header .logoContainer li.active a:hover {
+	color:#333;
+}
+
+.Header h1.homeBanner {
+ background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-transform: uppercase;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding-left: 0!important;
+  padding-right: 0!important;
+  font-size: 6em;
+  background-image:url(../images/walk.jpg);
+  padding-top:243px;
+  padding-bottom:243px;
+}
+.mainContainer {
+	background:#ccc;
+}
+.photoPlaceHolder {
+	height:200px;
+	background:#999;
+	margin-top:10px;
+	margin-bottom:10px;
+}
