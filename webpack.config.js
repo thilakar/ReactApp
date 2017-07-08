@@ -28,7 +28,7 @@ module.exports = {
          {test: /\.scss$/, loader: ExtractTextPlugin.extract("style-loader","css-loader!postcss-loader!sass-loader") },
          {test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader!postcss-loader") },    
          {test: /\.woff$/, loader: "url-loader?limit=10000&mimetype=application/font-woff&name=[path][name].[ext]"},
-         {test: /\.woff2$/, loader: "url-loader?limit=10000&mimetype=application/font-woff2&name=[path][name].[ext]"},
+         {test: /\.(woff2|otf)$/, loader: "url-loader?limit=10000&mimetype=application/font-woff2&name=[path][name].[ext]"},
          {test: /\.(eot|ttf|svg|gif|png|jpg|jpeg)$/, loader: "file-loader"}
        ]
       },

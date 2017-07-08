@@ -1,6 +1,11 @@
+
+@font-face {
+    font-family: Itc-avant-garde-gothic;
+    src: url(../fonts/itc-avant-garde-gothic-std-book-59610d4cbdcf6.otf);
+}
 body {
 	font-size:12px;
-	font-family: Arial helvetica;
+	font-family: Itc-avant-garde-gothic;
 	text-align: left;
 }
 ul, p, ol, p, h1, h2, h3 {
@@ -10,6 +15,8 @@ ul, p, ol, p, h1, h2, h3 {
 li {
 	list-style-type:none;
 }
+
+
 .Header .logoContainer {
 	width:100%;
 	background:#333;
@@ -40,7 +47,7 @@ li {
   padding-left: 0!important;
   padding-right: 0!important;
   font-size: 6em;
-  background-image:url(../images/walk.jpg);
+  background-image:url(../images/elephant.jpg);
   padding-top:243px;
   padding-bottom:243px;
 }
