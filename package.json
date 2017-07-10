@@ -4,7 +4,7 @@
   "description": "REACT APP",
   "main": "bundle.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --open "
+    "start": "webpack-dev-server --inline --open"
   },
   "repository": {
     "type": "git",
