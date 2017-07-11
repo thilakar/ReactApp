@@ -15,17 +15,31 @@ ul, p, ol, p, h1, h2, h3 {
 li {
 	list-style-type:none;
 }
-
-
+.noPadding {
+  padding-left:0px;
+  padding-right:0px;
+}
 .Header .logoContainer {
 	width:100%;
-	background:#333;
+	/*background:#333;*/
 	color:#fff;
   padding-left: 0!important;
   padding-right: 0!important;
-  position: fixed;
-  top:20px;
-  left:0;
+  position: relative;  
+}
+.Header .logoContainer.clone {
+    position:fixed;
+    top:-65px;
+    left: 0;
+    right: 0;
+    z-index:999;
+    transition:0.4s top cubic-bezier(.3,.73,.3,.74);
+    background:#333;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+body.down .Header .logoContainer.clone {
+    top:0;
 }
 .Header .logoContainer li a{
 	color:#fff;
@@ -51,12 +65,30 @@ li {
   padding-top:243px;
   padding-bottom:243px;
 }
+.logo {
+  width:70px;
+  height:53px;
+  background-image:url(../images/logo.png);
+  margin-left:13px;
+  display:inline-block;
+  padding-left:77px;
+  padding-top:16px;
+  font-size:27px;
+  background-repeat: no-repeat;
+}
 .mainContainer {
 	background:#ccc;
 }
-.photoPlaceHolder {
+/*.photoPlaceHolder {
 	height:200px;
 	background:#999;
 	margin-top:10px;
 	margin-bottom:10px;
+}*/
+
+.aboutus {
+  height:200px;
+}
+.title {
+  margin-top:5px;
 }

@@ -8,13 +8,23 @@ class Header extends React.Component {
           paddingTop: 0,
           paddingBottom:0
        };     
+
+
    }
    componentDidMount(){
-      let partialWindow = ((window.innerHeight/2) - ($('.homeBanner').height()/2));
-          this.setState({
-            paddingTop: partialWindow,
-            paddingBottom:partialWindow
-          })
+      let partialWindow = ((window.innerHeight/2) - ($('.logoContainer').height()/2));
+      this.setState({
+        paddingTop: partialWindow,
+        paddingBottom:partialWindow
+      });
+
+      let $header = $('.logoContainer'),
+          $headerClone = $header.before($header.clone().addClass("clone"));
+
+      $(window).on("scroll", function() {
+          var fromTop = $(window).scrollTop();
+          $("body").toggleClass("down", (fromTop > $('.logoContainer').height()));
+      });
    }
    render() {
       const HeaderStyle = {
@@ -24,7 +34,9 @@ class Header extends React.Component {
       return (
          <div className="Header">
          	<div className="logoContainer col-xs-12">
-         			<div className="pull-left">Logo</div>
+         			<div className="pull-left">
+                 <span className="logo">Potography</span>
+               </div>
                   <div className="pull-right">
                      <ul className="nav navbar-nav">
               			   <li className="nav-item active">                  
@@ -42,7 +54,7 @@ class Header extends React.Component {
                      </ul>
                   </div>
          	</div>
-            <h1 className="homeBanner" style={HeaderStyle}>Thilakar's Photography</h1>
+            <h1 className="homeBanner" style={HeaderStyle}>Lorem ipsum</h1>
          </div>     
       );
    }
