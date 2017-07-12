@@ -2,6 +2,7 @@ var path = require("path");
 var webpack = require("webpack");
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   entry: [
@@ -11,44 +12,81 @@ module.exports = {
     './index.js'
   ],
   output: {
-    pathinfo: true,
-    path: __dirname,
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/dist'
   },
-  devServer: { inline: true }, 
+  // devServer: { inline: true },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: ['babel'],
-        query: {
-          presets: ['es2015', 'react']
-        }
+        use: [
+          {           
+            loader: 'babel-loader',
+            options: {
+              presets: ['es2015','react']
+            }
+          }
+        ]
       },
-      { test: /\.scss$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader!sass-loader") },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader") },
-      { test: /\.woff$/, loader: "url-loader?limit=10000&mimetype=application/font-woff&name=[path][name].[ext]" },
-      { test: /\.(woff2|otf)$/, loader: "url-loader?limit=10000&mimetype=application/font-woff2&name=[path][name].[ext]" },
-      { test: /\.(eot|ttf|svg|gif|png|jpg|jpeg)$/, loader: "file-loader" }
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          use: ["css-loader", "sass-loader"],
+          fallback: "style-loader"
+        })
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: ["css-loader"],
+          fallback: "style-loader"
+        })
+      },
+      {
+        test: /\.woff$/,
+        //use: [{ loader: "url-loader?limit=10000&mimetype=application/font-woff&name=[path][name].[ext]" }]
+         use: [{
+          loader:"file-loader",
+          options: {
+            name: '[name].[ext]',
+            outputPath:'images/',
+            publicPath:'images/'
+          }
+        }]
+      },
+      {
+        test: /\.(woff2|otf)$/,
+       // use: [{ loader: "url-loader?limit=10000&mimetype=application/font-woff2&name=[path][name].[ext]" }]
+        use: [{
+          loader:"file-loader",
+          options: {
+            name: '[name].[ext]',
+            outputPath:'images/',
+            publicPath:'images/'
+          }
+        }]
+      },
+      {
+        test: /\.(eot|ttf|svg|gif|png|jpg|jpeg)$/,
+        use: [{
+          loader:"file-loader",
+          options: {
+            name: '[name].[ext]',
+            outputPath:'images/',
+            publicPath:'images/'
+          }
+        }]
+      }
     ]
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
-    }),
-    new ExtractTextPlugin("bundle.css")
-
-  ],
-  postcss: function () {
-    return [autoprefixer({
-      browsers: ['last 3 versions']
-    })];
-  },
-  resolve: {
-    modulesDirectories: ['node_modules'],
-    root: [path.resolve('./js/', path.resolve('./js/lib')) ]
-  }
+    new webpack.ProvidePlugin({ $: "jquery", jQuery: "jquery"}),
+    new ExtractTextPlugin("bundle.css"),
+    new CleanWebpackPlugin(['dist'])
+  ]  
 }
+
+
 
