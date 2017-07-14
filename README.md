@@ -1,6 +1,4 @@
-REACT 
-
-Hello World
+REACT Potography site
 
 run the below command
 
@@ -11,10 +9,10 @@ run the below command
 node module folder will be create. After that run the below command in cmd
 
 ```sh
-"npm start"
+"npm run build"
 ```
 
-Auto launch the browser with "http://localhost:8080/" URL and you can see the "Hello world" text in the browser.
+Auto launch the browser with "http://localhost:8080/" URL and you can see the "potography site".
 
 
 
