@@ -44,24 +44,33 @@ body.down .Header .logoContainer.clone {
 .Header .logoContainer li a{
 	color:#fff;
 	font-size:14px;
+  padding:0px;
+  /*padding-left:0px;
+  padding-right:0px;*/
+  margin-left:15px;
+  margin-right:15px;
+  margin-top:25px;
 }
 
 .Header .logoContainer li a:hover, .Header .logoContainer li.active a:hover {
-	color:#333;
+	color:#ffffff;
+  background:none;
+  border-bottom:solid 2px #fff;
 }
+
 
 .Header h1.homeBanner {
  background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  text-transform: uppercase;
-  color: white;
+  /*text-transform: uppercase;*/
+  color: #fff;
   width: 100%;
   text-align: center;
   padding-left: 0!important;
   padding-right: 0!important;
   font-size: 6em;
-  background-image:url(../images/walk.jpg);
+  background-image:url(../images/elephant.jpg);
   padding-top:243px;
   padding-bottom:243px;
 }
@@ -76,19 +85,37 @@ body.down .Header .logoContainer.clone {
   font-size:27px;
   background-repeat: no-repeat;
 }
-.mainContainer {
+/*.mainContainer {
 	background:#ccc;
-}
+}*/
 /*.photoPlaceHolder {
 	height:200px;
 	background:#999;
 	margin-top:10px;
 	margin-bottom:10px;
 }*/
-
-.aboutus {
-  height:200px;
+.photoPlaceHolder:hover {
+  width:100%;
+  height:100%;
+  background:#000000;
+  opacity: 0.6;
 }
+.aboutus {
+  line-height: 20px;
+  background:#e4e4e4;
+}
+/*.aboutImg {
+  width:100%;
+  background-image:url(../images/about.png);
+  display:inline-block;
+}*/
 .title {
-  margin-top:5px;
+  background:#333;
+  color:#fff;
+}
+.footer {
+  background:#333;
+  color:#fff;
+  padding-top:15px;
+  padding-bottom:15px;
 }

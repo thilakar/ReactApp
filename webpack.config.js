@@ -7,7 +7,7 @@ var CleanWebpackPlugin = require("clean-webpack-plugin");
 module.exports = {
   entry: [
     'bootstrap/dist/css/bootstrap.css',
-    'jquery/dist/jquery.min.js',
+    //'jquery/dist/jquery.min.js',
     './asserts/css/style.css',
     './index.js'
   ],

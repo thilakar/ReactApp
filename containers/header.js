@@ -23,7 +23,7 @@ class Header extends React.Component {
 
       $(window).on("scroll", function() {
           var fromTop = $(window).scrollTop();
-          $("body").toggleClass("down", (fromTop > $('.logoContainer').height()));
+          $("body").toggleClass("down", (fromTop > $('.logoContainer').height()+200));
       });
    }
    render() {
@@ -35,26 +35,26 @@ class Header extends React.Component {
          <div className="Header">
          	<div className="logoContainer col-xs-12">
          			<div className="pull-left">
-                 <span className="logo">Potography</span>
+                 <span className="logo">potography</span>
                </div>
-                  <div className="pull-right">
-                     <ul className="nav navbar-nav">
+                  <div className="">
+                     <ul className="nav navbar-nav pull-right">
               			   <li className="nav-item active">                  
-                           <a href="#" className="nav-link">Overview</a>
+                           <a href="#" className="nav-link">overview</a>
                         </li>
                         <li className="nav-item">                  
-                           <a href="#" className="nav-link">Gallery</a>
+                           <a href="#" className="nav-link">gallery</a>
                         </li>
                         <li className="nav-item">                  
-                           <a href="#" className="nav-link">Contacts</a>
+                           <a href="#" className="nav-link">contacts</a>
                         </li>
                         <li className="nav-item">                  
-                           <a href="#" className="nav-link">Login</a>
+                           <a href="#" className="nav-link">login</a>
                         </li>
                      </ul>
                   </div>
          	</div>
-            <h1 className="homeBanner" style={HeaderStyle}>Lorem ipsum</h1>
+            <h1 className="homeBanner" style={HeaderStyle}>thilakar's potography</h1>
          </div>     
       );
    }
