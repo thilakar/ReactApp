@@ -7,12 +7,11 @@ class Header extends React.Component {
         this.state = {
           paddingTop: 0,
           paddingBottom:0
-       };     
-
-
+       };    
    }
    componentDidMount(){
       let partialWindow = ((window.innerHeight/2) - ($('.logoContainer').height()/2));
+      console.log((window.innerHeight/2)+','+($('.logoContainer').height()/2));
       this.setState({
         paddingTop: partialWindow,
         paddingBottom:partialWindow
@@ -54,7 +53,7 @@ class Header extends React.Component {
                      </ul>
                   </div>
          	</div>
-            <h1 className="homeBanner" style={HeaderStyle}>thilakar's potography</h1>
+            <h1 className="homeBanner" style={HeaderStyle}>potography</h1>
          </div>     
       );
    }
