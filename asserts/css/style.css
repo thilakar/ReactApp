@@ -7,6 +7,7 @@ body {
 	font-size:12px;
 	font-family: Itc-avant-garde-gothic;
 	text-align: left;
+  color:#333;
 }
 ul, p, ol, p, h1, h2, h3 {
 	margin:0px;
@@ -112,10 +113,16 @@ body.down .Header .logoContainer.clone {
 .title {
   background:#333;
   color:#fff;
+  font-size:20px;
+  margin-bottom:10px
 }
 .footer {
   background:#333;
   color:#fff;
   padding-top:15px;
   padding-bottom:15px;
+}
+.footer input, .footer textarea{
+   color:#333;
+   border-radius:5px;
 }
